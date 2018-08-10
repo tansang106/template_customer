@@ -8,6 +8,9 @@ import axios from 'axios';
 import callApi from '../../Utils/apiCaller';
 import { actFetchShopRequest } from '../../Actions/index';
 import InvoiceCustomer from '../InvoiceCustomer/InvoiceCustomer';
+import * as dataStorage from '../../Constants/localStorage';
+import * as Config from '../../Constants/Config';
+
 
 const Child = ({ match }) => (
     <InvoiceCustomer match={match} />
@@ -53,8 +56,9 @@ class CoffeeShopGrid extends Component {
                                 <div className="row">
                                 <div className="col-md-4 col-lg-3 text-center">
                                     {/* <NavLink to={`${url}/${shop.shop_id}`}><img src="../assets/images/users/1.jpg" alt="user" className="img-circle img-responsive" /></NavLink> */}
-                                    <Link to={`invoice/${shop.shop_id}`}><img src="../assets/images/users/1.jpg" alt="user" className="img-circle img-responsive" /></Link>
+                                    {/* <Link to={`invoice/${shop.shop_id}`}><img src="../assets/images/users/1.jpg" alt="user" className="img-circle img-responsive" /></Link> */}
                                     {/* <Link to="/invoice"><img src="../assets/images/users/1.jpg" alt="user" className="img-circle img-responsive" /></Link> */}
+                                    <Link to={`invoice/${shop.shop_id}`}><img src={`${Config.API_URL}/uploads/imgShop/${shop.shop_avatar}`} alt="shop" className="img-circle img-responsive" /></Link>
                                     </div>
                                     <div className="col-md-8 col-lg-9">
                                     <h3 className="box-title m-b-0" onClick={this.onClick}>{shop.shop_name}</h3> <small>{shop.shop_email}</small>
