@@ -1,0 +1,115 @@
+.text_center{
+  text-align: center; 
+}
+
+.text_left{
+  text-align: left !important;
+}
+/* 
+#classModal {
+  
+} */
+
+.modal-body {
+  overflow-x: auto;
+}
+
+.icon_action {
+  margin-right: 5%;
+}
+
+.border_none{
+  border: none;
+}
+
+.padding_top_3{
+  padding-top: 3%;
+}
+
+.margin-bottom_0{
+  margin-bottom: 0;
+}
+
+.size_50{
+  size:50%;
+}
+
+.padding_bottom_3{
+  padding-bottom: 3%;
+}
+
+.padding_right_5{
+  padding-right: 5%;
+}
+
+.width_7{
+  width: 7%;
+}
+
+.modal-dialog_margin_0 {
+  position: relative;
+  /* width: auto;
+  margin: 10px; */
+  width: 75%;
+  margin: 30px auto;
+  
+}
+.div_no_margin {
+  padding:0;
+  margin:0;
+  float: left;
+}
+.col-sm-6-no-padding {
+  position: relative;
+  min-height: 1px;
+  width: 50%;
+  height: 75%;
+  float:left;
+}
+.modal-content-margin-bottom {
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+  
+  height: 100%;
+}
+.jumbotron_no_margin_bottom {
+  padding: 30px 15px;
+  margin-bottom: 1px;
+  color: inherit;
+  background-color: #eee;
+}
+.col-lg-9-no-padding {
+position: relative;
+min-height: 1px;
+float: left;
+width: 100%;
+}
+
+.user_background{
+  background: url(../assets/images/background/user-info.jpg) no-repeat;
+}
+
+.login_background{
+  background-image:url(../assets/images/background/login-register.jpg);
+}
+
+.icon_action1{
+  padding-right: 2%;
+  color: #fff
+}
+
+.text_left{
+  text-align: left;
+}
+
+.text_right{
+  text-align: right;
+}
