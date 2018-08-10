@@ -17,6 +17,7 @@ class CartResultCustomer extends Component {
             total: '',
             vat: '', 
             discount: '',
+            total1:'',
         }
     }
     
@@ -123,11 +124,25 @@ class CartResultCustomer extends Component {
         return Total
     }
 
-    onPay = (e) => {
+    tinhtotal = () => {
+        let {cart} = this.props
+        let total1 = this.showTotal(cart)
+        this.setState({
+            total1: total1,
+        })
+    }
+
+    onPay = async (e) => {
         e.preventDefault();
+         
+        await this.tinhtotal();    
+        let totalETH = this.state.total1;
+        console.log(totalETH);
+        
         let account = window.web3.eth.accounts[0];
         let contractaddress = '0x632bce355360ff614ee84f685b4a052485250fb0';
-        window.web3.eth.sendTransaction({to:contractaddress,from:account,value:window.web3.toWei("0.5","ether")},function(error, result){
+        window.web3.eth.sendTransaction({ to: contractaddress, from: account, value: window.web3.toWei(totalETH, "ether") }, function (error, result) {
+            
             if(!error)
                 console.log(JSON.stringify(result));
             else
