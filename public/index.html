@@ -16,13 +16,13 @@
     <!-- Footable CSS -->
     <link href="%PUBLIC_URL%/assets/plugins/footable/css/footable.core.css" rel="stylesheet">
     <link href="%PUBLIC_URL%/assets/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
-     <!--alerts CSS -->
+    <!--alerts CSS -->
     <link href="%PUBLIC_URL%/assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
     <!-- Custom CSS -->
     <link href="%PUBLIC_URL%/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="%PUBLIC_URL%/css/myCss.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/css/animate2.css">
-    <link href="%PUBLIC_URL%/css/toastr.min.css" rel="stylesheet"/>
+    <link href="%PUBLIC_URL%/css/toastr.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/plugins/dropify/dist/css/dropify.min.css">
     <!-- chartist CSS -->
     <link href="%PUBLIC_URL%/assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
@@ -81,6 +81,10 @@
     <script src="%PUBLIC_URL%/assets/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
     <!-- jQuery file upload -->
     <script src="%PUBLIC_URL%/assets/plugins/dropify/dist/js/dropify.min.js"></script>
+
+    <!--web3-->
+    <script src="%PUBLIC_URL%/assets/plugins/dropify/dist/js/web3.min.js"></script>
+
     <!-- Upload Image -->
     <script>
         $(document).ready(function () {
@@ -149,6 +153,19 @@
             });
         });
     </script>
+    <script>
+        if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+        }
+
+        web3.eth.getAccounts()
+                .then(console.log);
+
+    </script>
+
 </body>
 
 </html>

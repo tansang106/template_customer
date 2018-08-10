@@ -127,6 +127,8 @@ class CartResultCustomer extends Component {
         console.log('cart', cart)
         let gia = this.showTotal(cart);
         console.log('giá của cart', gia)
+
+        
         // let user_id = dataStorage.DATA_USER.user_id
         // let total = this.showTotalAmount(cart);
         // let totalBill = await this.showTotal(cart, vat, discount)
