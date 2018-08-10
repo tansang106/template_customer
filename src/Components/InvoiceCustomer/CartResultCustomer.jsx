@@ -17,6 +17,7 @@ class CartResultCustomer extends Component {
             total: '',
             vat: '', 
             discount: '',
+            total1:'',
         }
     }
     
@@ -123,11 +124,30 @@ class CartResultCustomer extends Component {
         return Total
     }
 
-    onPay = async (cart, discount, vat) => {
-        console.log('cart', cart)
-        let gia = this.showTotal(cart);
-        console.log('giá của cart', gia)
+    tinhtotal = () => {
+        let {cart} = this.props
+        let total1 = this.showTotal(cart)
+        this.setState({
+            total1: total1,
+        })
+    }
 
+    onPay = async (e) => {
+        e.preventDefault();
+         
+        await this.tinhtotal();    
+        let totalETH = this.state.total1;
+        console.log(totalETH);
+        
+        let account = window.web3.eth.accounts[0];
+        let contractaddress = '0x632bce355360ff614ee84f685b4a052485250fb0';
+        window.web3.eth.sendTransaction({ to: contractaddress, from: account, value: window.web3.toWei(totalETH, "ether") }, function (error, result) {
+            
+            if(!error)
+                console.log(JSON.stringify(result));
+            else
+                console.error(error);
+        })
         
         // let user_id = dataStorage.DATA_USER.user_id
         // let total = this.showTotalAmount(cart);
@@ -230,7 +250,7 @@ class CartResultCustomer extends Component {
                 <button
                     className="btn btn-danger"
                     type="submit"
-                    onClick={ () => this.onPay(cart, discount, vat)}
+                    onClick={this.onPay}
                     id="proceedToPayment"
                 >
                     {" "}
